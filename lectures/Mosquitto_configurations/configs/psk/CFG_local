@@ -1,0 +1,11 @@
+allow_anonymous false
+
+psk_file /usr/local/src/mosquitto-1.5.8/psk
+
+port 1888
+
+listener 1889
+
+psk_hint hint
+
+log_type all

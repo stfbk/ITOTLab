@@ -1,0 +1,35 @@
+docker run -it -p 1881:1881 \
+-v ~/configs/DM1.conf:/mosquitto/config/mosquitto.conf:ro \
+-v ~/data1:/mosquitto/data:rw \
+-v ~/log1:/mosquitto/log:rw \
+eclipse-mosquitto:latest
+
+docker run -it -p 1882:1882 \
+-v ~/configs/DM2.conf:/mosquitto/config/mosquitto.conf:ro \
+-v ~/data2/passwords:/mosquitto/config/users_passwords:ro \
+-v ~/data2:/mosquitto/data:rw \
+-v ~/log2:/mosquitto/log:rw \
+eclipse-mosquitto:latest
+
+docker run -it -p 1883:1883 \
+-v ~/configs/DM3.conf:/mosquitto/config/mosquitto.conf:ro \
+-v ~/data3/cert:/mosquitto/config/cert:ro \
+-v ~/data3:/mosquitto/data:rw \
+-v ~/log3:/mosquitto/log:rw \
+eclipse-mosquitto:latest
+
+docker run -it -p 1884:1884 \
+-v ~/configs/DM4.conf:/mosquitto/config/mosquitto.conf:ro \
+-v ~/data4/passwords:/mosquitto/config/users_passwords:ro \
+-v ~/data4/cert:/mosquitto/config/cert:ro \
+-v ~/data4:/mosquitto/data:rw \
+-v ~/log4:/mosquitto/log:rw \
+eclipse-mosquitto:latest
+
+docker run -it -p 1885:1885 \
+-v ~/configs/DM5.conf:/mosquitto/config/mosquitto.conf:ro \
+-v ~/data5/acls:/mosquitto/config/acls:ro \
+-v ~/data5/cert:/mosquitto/config/cert:ro \
+-v ~/data5:/mosquitto/data:rw \
+-v ~/log5:/mosquitto/log:rw \
+eclipse-mosquitto:latest
